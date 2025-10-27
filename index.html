@@ -1,0 +1,2539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KelTech Solutions </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style id="app-style">
+
+/* === GLOBAL STYLES === */
+
+* {
+
+margin: 0;
+
+padding: 0;
+
+box-sizing: border-box;
+
+font-family: "Poppins", sans-serif;
+
+}
+
+
+
+body {
+
+color: #222;
+
+background-color: #f8f9fb;
+
+}
+
+
+
+img {
+
+max-width: 100%;
+
+height: auto;
+
+display: block;
+
+}
+
+
+
+a {
+
+text-decoration: none;
+
+color: inherit;
+
+}
+
+
+
+/* === HEADER === */
+
+header {
+
+position: sticky;
+
+top: 0;
+
+width: 100%;
+
+background: #fff;
+
+display: flex;
+
+justify-content: space-between;
+
+align-items: center;
+
+padding: 15px 5%;
+
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+z-index: 1000;
+
+}
+
+
+
+.logo {
+
+height: 55px;
+
+width: auto;
+
+}
+
+
+
+.menu-toggle {
+
+display: none;
+
+font-size: 1.8rem;
+
+color: #434d96;
+
+cursor: pointer;
+
+}
+
+
+
+nav ul {
+
+list-style: none;
+
+display: flex;
+
+gap: 30px;
+
+}
+
+
+
+nav ul li a {
+
+font-weight: 500;
+
+padding: 8px 14px;
+
+border-radius: 8px;
+
+transition: all 0.3s;
+
+}
+
+
+
+nav ul li a:hover,
+
+nav ul li a.active {
+
+background-color: #434d96;
+
+color: #fff;
+
+}
+
+
+
+/* === PAGE ROUTING STYLES === */
+
+.page-container {
+
+display: none;
+
+min-height: 80vh;
+
+}
+
+
+
+.page-container.active-page {
+
+display: block;
+
+}
+
+
+
+/* === HERO === */
+
+.hero {
+
+background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+
+url("https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?cs=srgb&dl=pexels-pixabay-356056.jpg&fm=jpg")
+
+center/cover no-repeat;
+
+color: #f0ebeb;
+
+text-align: center;
+
+padding: 140px 20px;
+
+position: relative;
+
+overflow: hidden;
+
+}
+
+
+
+.hero .hero-context {
+
+position: absolute;
+
+top: 10px;
+
+right: 10px;
+
+background: rgba(97, 145, 67, 0.8);
+
+padding: 8px 15px;
+
+border-radius: 50px;
+
+font-size: 0.9rem;
+
+}
+
+
+
+.hero h1 {
+
+font-size: 3rem;
+
+margin-bottom: 15px;
+
+letter-spacing: 1px;
+
+}
+
+
+
+.hero p {
+
+font-size: 1.2rem;
+
+max-width: 700px;
+
+margin: 0 auto 30px;
+
+}
+
+
+
+.hero a {
+
+background: #619143;
+
+color: #f8f6f6;
+
+padding: 14px 35px;
+
+border-radius: 50px;
+
+font-weight: 600;
+
+transition: 0.3s;
+
+display: inline-block;
+
+}
+
+
+
+.hero a:hover {
+
+background: #434d96;
+
+transform: translateY(-3px);
+
+}
+
+
+
+/* === SECTIONS (Sub-sections within a Page Container) === */
+
+section {
+
+padding: 80px 5%;
+
+text-align: center;
+
+}
+
+
+
+section h2 {
+
+font-size: 2.4rem;
+
+color: #0937f1;
+
+margin-bottom: 15px;
+
+font-weight: 700;
+
+}
+
+
+
+section p {
+
+font-size: 1.1rem;
+
+color: #131212;
+
+max-width: 850px;
+
+margin: 0 auto 40px;
+
+}
+
+
+
+/* === FEATURES GRID (General purpose) - Used for Why Choose KelTech === */
+
+.features-grid {
+
+display: grid;
+
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+gap: 25px;
+
+margin-top: 30px;
+
+}
+
+
+
+.feature-item {
+
+background: #fff;
+
+border-radius: 12px;
+
+padding: 30px 20px;
+
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+
+transition: 0.3s;
+
+}
+
+
+
+.feature-item:hover {
+
+transform: translateY(-6px);
+
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+.feature-item i {
+
+font-size: 2.5rem;
+
+color: #619143;
+
+margin-bottom: 10px;
+
+}
+
+
+
+.feature-item h3 {
+
+color: #434d96;
+
+margin-bottom: 10px;
+
+}
+
+
+/* === SERVICE DETAIL STYLES (for Why Choose KelTech section) === */
+
+.feature-item.service-detail {
+
+text-align: left;
+
+}
+
+.feature-item.service-detail i {
+
+text-align: center;
+
+display: block;
+
+}
+
+.feature-item.service-detail h3 {
+
+text-align: center;
+
+}
+
+.feature-item.service-detail ul {
+
+list-style: none;
+
+padding-left: 0;
+
+margin-top: 15px;
+
+}
+
+.feature-item.service-detail ul li {
+
+margin-bottom: 8px;
+
+font-size: 1rem;
+
+color: #131212; /* Adjusted color for better contrast */
+
+position: relative;
+
+padding-left: 20px;
+
+}
+
+.feature-item.service-detail ul li:before {
+
+content: "\f058"; /* Check-circle icon */
+
+font-family: "Font Awesome 5 Free";
+
+font-weight: 900;
+
+color: #434d96; /* Use primary color */
+
+position: absolute;
+
+left: 0;
+
+}
+
+
+
+
+
+/* === SERVICES / PORTFOLIO GRID (General card style) === */
+
+.grid {
+
+display: grid;
+
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+gap: 25px;
+
+margin-top: 40px;
+
+}
+
+
+
+/* --- Service Card Enhancements for Clickability --- */
+
+.card.service-card {
+
+cursor: pointer;
+
+transition: all 0.3s ease;
+
+}
+
+.card.service-card:hover {
+
+transform: translateY(-8px); /* More noticeable lift on hover */
+
+box-shadow: 0 10px 25px rgba(67, 77, 150, 0.2); /* Highlighted shadow */
+
+border: 2px solid #434d96; /* Subtle border to indicate focus */
+
+}
+
+/* ------------------------------------------------ */
+
+
+
+.card {
+
+background: #fff;
+
+border-radius: 12px;
+
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+padding: 25px;
+
+transition: 0.3s;
+
+position: relative;
+
+}
+
+
+
+.card:hover {
+
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+}
+
+
+
+.card i {
+
+font-size: 2rem;
+
+color: #619143;
+
+margin-bottom: 12px;
+
+}
+
+
+
+.card img {
+
+border-radius: 10px;
+
+margin-bottom: 15px;
+
+height: 200px; /* Consistent height for portfolio images */
+
+object-fit: cover;
+
+width: 100%;
+
+}
+
+
+
+/* === INTERNAL PAGE HERO STYLES === */
+
+.internal-hero {
+
+background-color: #434d96;
+
+color: #fff;
+
+padding: 80px 5% 40px;
+
+text-align: center;
+
+}
+
+
+
+.internal-hero h1 {
+
+font-size: 3rem;
+
+margin-bottom: 10px;
+
+}
+
+
+
+.internal-hero p {
+
+font-size: 1.2rem;
+
+max-width: 700px;
+
+margin: 0 auto;
+
+}
+
+
+
+/* === MODAL STYLES === */
+
+.modal-overlay {
+
+position: fixed;
+
+top: 0;
+
+left: 0;
+
+width: 100%;
+
+height: 100%;
+
+background: rgba(0, 0, 0, 0.8);
+
+display: none; /* Hidden by default, JS will change this */
+
+justify-content: center;
+
+align-items: center;
+
+z-index: 2000;
+
+overflow-y: auto;
+
+padding: 20px;
+
+animation: fadeIn 0.3s;
+
+}
+
+
+
+.modal-content {
+
+background: #fff;
+
+border-radius: 15px;
+
+width: 90%;
+
+max-width: 900px;
+
+max-height: 90vh;
+
+padding: 40px;
+
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+position: relative;
+
+overflow-y: auto;
+
+animation: slideUp 0.4s ease-out;
+
+}
+
+
+
+.modal-close {
+
+position: absolute;
+
+top: 15px;
+
+right: 15px;
+
+font-size: 1.8rem;
+
+color: #434d96;
+
+cursor: pointer;
+
+transition: color 0.2s;
+
+}
+
+
+
+.modal-close:hover {
+
+color: #619143;
+
+}
+
+
+
+.service-detail-modal h2 {
+
+color: #434d96;
+
+font-size: 2rem;
+
+margin-bottom: 20px;
+
+text-align: left;
+
+}
+
+
+
+.service-detail-modal img {
+
+width: 100%;
+
+height: 300px; /* Fixed height for consistency */
+
+object-fit: cover;
+
+border-radius: 10px;
+
+margin-bottom: 25px;
+
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow on image */
+
+}
+
+
+
+.service-detail-modal p {
+
+color: #333;
+
+line-height: 1.6;
+
+margin-bottom: 25px;
+
+text-align: left;
+
+}
+
+
+
+.service-detail-modal h3 {
+
+color: #619143;
+
+font-size: 1.5rem;
+
+margin-top: 30px;
+
+margin-bottom: 15px;
+
+text-align: left;
+
+border-bottom: 2px solid #f0f2f5;
+
+padding-bottom: 5px;
+
+}
+
+
+
+.service-detail-modal ul {
+
+list-style: none;
+
+padding-left: 0;
+
+margin-bottom: 30px;
+
+}
+
+
+
+.service-detail-modal ul li {
+
+font-size: 1.05rem;
+
+color: #444;
+
+position: relative;
+
+padding-left: 25px;
+
+margin-bottom: 10px;
+
+text-align: left;
+
+}
+
+
+
+.service-detail-modal ul li:before {
+
+content: "\f00c"; /* Check icon */
+
+font-family: "Font Awesome 5 Free";
+
+font-weight: 900;
+
+color: #619143;
+
+position: absolute;
+
+left: 0;
+
+top: 2px;
+
+}
+
+
+
+/* AI Image Generation Button */
+
+.generate-image-btn, .generate-summary-btn {
+
+background: #434d96;
+
+color: #fff;
+
+border: none;
+
+border-radius: 50px;
+
+padding: 8px 15px;
+
+font-size: 0.9rem;
+
+cursor: pointer;
+
+display: flex;
+
+align-items: center;
+
+margin: 10px auto;
+
+transition: all 0.3s ease;
+
+}
+
+
+
+.generate-image-btn:hover, .generate-summary-btn:hover {
+
+background: #619143;
+
+transform: translateY(-2px);
+
+}
+
+
+
+.generate-image-btn i, .generate-summary-btn i {
+
+font-size: 1rem;
+
+margin-right: 5px;
+
+color: #fff;
+
+}
+
+
+
+.image-generation-state, .summary-generation-state {
+
+height: 3px;
+
+width: 0%;
+
+background: #619143;
+
+transition: width 0.3s ease;
+
+margin-top: 5px;
+
+}
+
+
+
+.loading-indicator {
+
+display: none;
+
+margin: 10px auto;
+
+}
+
+
+
+.loading-indicator .spinner {
+
+border: 3px solid rgba(97, 145, 67, 0.3);
+
+border-radius: 50%;
+
+border-top: 3px solid #619143;
+
+width: 20px;
+
+height: 20px;
+
+animation: spin 1s linear infinite;
+
+display: inline-block;
+
+margin-right: 10px;
+
+}
+
+
+
+@keyframes spin {
+
+0% { transform: rotate(0deg); }
+
+100% { transform: rotate(360deg); }
+
+}
+
+
+
+.case-study-summary {
+
+background: #f8f9fb;
+
+border-left: 3px solid #434d96;
+
+padding: 15px;
+
+margin-top: 15px;
+
+border-radius: 0 10px 10px 0;
+
+display: none;
+
+}
+
+
+
+.case-study-summary ul {
+
+text-align: left;
+
+margin-left: 20px;
+
+}
+
+
+
+/* Chat Widget Styles */
+
+.chat-widget {
+
+position: fixed;
+
+bottom: 20px;
+
+right: 20px;
+
+z-index: 1500;
+
+}
+
+
+
+.chat-bubble {
+
+width: 60px;
+
+height: 60px;
+
+background: #434d96;
+
+border-radius: 50%;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+cursor: pointer;
+
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+transition: all 0.3s ease;
+
+}
+
+
+
+.chat-bubble:hover {
+
+background: #619143;
+
+transform: scale(1.1);
+
+}
+
+
+
+.chat-bubble i {
+
+font-size: 1.8rem;
+
+color: white;
+
+}
+
+
+
+.chat-window {
+
+position: fixed;
+
+bottom: 90px;
+
+right: 20px;
+
+width: 350px;
+
+height: 450px;
+
+background: white;
+
+border-radius: 15px;
+
+box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+
+display: none;
+
+flex-direction: column;
+
+overflow: hidden;
+
+z-index: 1600;
+
+}
+
+
+
+.chat-header {
+
+background: #434d96;
+
+color: white;
+
+padding: 15px 20px;
+
+font-weight: 600;
+
+display: flex;
+
+justify-content: space-between;
+
+align-items: center;
+
+}
+
+
+
+.chat-header .close-chat {
+
+cursor: pointer;
+
+font-size: 1.2rem;
+
+}
+
+
+
+.chat-messages {
+
+padding: 20px;
+
+flex-grow: 1;
+
+overflow-y: auto;
+
+}
+
+
+
+.message {
+
+margin-bottom: 15px;
+
+max-width: 80%;
+
+}
+
+
+
+.message p {
+
+padding: 10px 15px;
+
+border-radius: 18px;
+
+display: inline-block;
+
+margin: 0;
+
+}
+
+
+
+.user-message {
+
+text-align: right;
+
+margin-left: auto;
+
+}
+
+
+
+.user-message p {
+
+background: #434d96;
+
+color: white;
+
+border-radius: 18px 18px 0 18px;
+
+}
+
+
+
+.bot-message p {
+
+background: #f0f2f5;
+
+color: #333;
+
+border-radius: 18px 18px 18px 0;
+
+}
+
+
+
+.chat-input {
+
+padding: 15px;
+
+border-top: 1px solid #eee;
+
+display: flex;
+
+align-items: center;
+
+}
+
+
+
+.chat-input input {
+
+flex-grow: 1;
+
+padding: 10px 15px;
+
+border: 1px solid #ddd;
+
+border-radius: 30px;
+
+outline: none;
+
+}
+
+
+
+.chat-input button {
+
+background: #619143;
+
+color: white;
+
+border: none;
+
+width: 40px;
+
+height: 40px;
+
+border-radius: 50%;
+
+margin-left: 10px;
+
+cursor: pointer;
+
+transition: all 0.3s ease;
+
+}
+
+
+
+.chat-input button:hover {
+
+background: #434d96;
+
+}
+
+
+
+/* Hidden Admin Panel */
+
+.admin-panel-toggle {
+
+position: fixed;
+
+bottom: 20px;
+
+left: 20px;
+
+width: 15px;
+
+height: 15px;
+
+background: transparent;
+
+cursor: pointer;
+
+z-index: 2000;
+
+}
+
+
+
+.admin-panel {
+
+position: fixed;
+
+bottom: 50px;
+
+left: 20px;
+
+background: white;
+
+border-radius: 10px;
+
+box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+
+padding: 20px;
+
+width: 300px;
+
+display: none;
+
+z-index: 1800;
+
+}
+
+
+
+.admin-panel h4 {
+
+color: #434d96;
+
+margin-bottom: 15px;
+
+font-size: 1.2rem;
+
+}
+
+
+
+.admin-panel .upload-area {
+
+border: 2px dashed #ccc;
+
+border-radius: 8px;
+
+padding: 20px;
+
+text-align: center;
+
+margin-bottom: 15px;
+
+cursor: pointer;
+
+}
+
+
+
+.admin-panel .upload-area:hover {
+
+border-color: #619143;
+
+}
+
+
+
+.admin-panel .upload-area i {
+
+font-size: 2rem;
+
+color: #ccc;
+
+margin-bottom: 10px;
+
+}
+
+
+
+.admin-panel .upload-area p {
+
+margin: 0;
+
+color: #666;
+
+font-size: 0.9rem;
+
+}
+
+
+
+.admin-panel button {
+
+width: 100%;
+
+padding: 10px;
+
+background: #434d96;
+
+color: white;
+
+border: none;
+
+border-radius: 5px;
+
+cursor: pointer;
+
+transition: all 0.3s ease;
+
+}
+
+
+
+.admin-panel button:hover {
+
+background: #619143;
+
+}
+
+
+
+.whatsapp-btn {
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+background: #25d366; /* WhatsApp Green */
+
+color: #fff;
+
+padding: 15px 30px;
+
+border-radius: 50px;
+
+font-size: 1.1rem;
+
+font-weight: 700;
+
+transition: 0.3s;
+
+text-transform: uppercase;
+
+max-width: 400px;
+
+margin: 0 auto;
+
+box-shadow: 0 4px 10px rgba(0, 30, 0, 0.2);
+
+}
+
+
+
+.whatsapp-btn:hover {
+
+background: #128c7e;
+
+transform: translateY(-2px);
+
+box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+
+}
+
+
+
+.whatsapp-btn i {
+
+margin-right: 10px;
+
+font-size: 1.3rem;
+
+color: #fff;
+
+}
+
+
+
+@keyframes fadeIn {
+
+from { opacity: 0; }
+
+to { opacity: 1; }
+
+}
+
+
+
+@keyframes slideUp {
+
+from { transform: translateY(50px); opacity: 0; }
+
+to { transform: translateY(0); opacity: 1; }
+
+}
+
+
+
+/* === FOOTER === */
+
+footer {
+
+background: #222;
+
+color: #eee;
+
+padding: 40px 5%;
+
+display: flex;
+
+flex-wrap: wrap;
+
+justify-content: space-between;
+
+align-items: center;
+
+gap: 20px;
+
+}
+
+
+
+footer .footer-left {
+
+max-width: 300px;
+
+}
+
+
+
+footer .footer-left h3 {
+
+color: #c1c67e;
+
+margin-bottom: 10px;
+
+}
+
+
+
+footer .social-icons a {
+
+color: #eee;
+
+margin-right: 10px;
+
+font-size: 1.3rem;
+
+transition: 0.3s;
+
+}
+
+
+
+footer .social-icons a:hover {
+
+color: #648fbd;
+
+}
+
+
+
+footer p {
+
+font-size: 0.9rem;
+
+margin-top: 10px;
+
+color: #bbb;
+
+}
+
+
+
+/* === RESPONSIVE NAV === */
+
+@media (max-width: 768px) {
+
+nav ul {
+
+flex-direction: column;
+
+background: #fff;
+
+position: absolute;
+
+top: 75px;
+
+left: 0;
+
+width: 100%;
+
+display: none;
+
+padding: 20px 0;
+
+box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+
+}
+
+
+
+nav ul.active {
+
+display: flex;
+
+}
+
+
+
+.menu-toggle {
+
+display: block;
+
+}
+
+
+.modal-content {
+
+padding: 20px;
+
+}
+
+
+.service-detail-modal h2 {
+
+font-size: 1.5rem;
+
+}
+
+
+.service-detail-modal img {
+
+height: 200px; /* Smaller image on mobile */
+
+}
+
+
+
+.chat-window {
+
+width: 90%;
+
+right: 5%;
+
+left: 5%;
+
+}
+
+}
+
+
+
+/* Form styling */
+
+form {
+
+max-width: 600px;
+
+margin: 0 auto;
+
+}
+
+
+
+input, textarea {
+
+width: 100%;
+
+padding: 12px;
+
+margin-bottom: 15px;
+
+border: 1px solid #ddd;
+
+border-radius: 8px;
+
+transition: border-color 0.3s;
+
+font-family: inherit;
+
+}
+
+
+
+input:focus, textarea:focus {
+
+outline: none;
+
+border-color: #619143;
+
+}
+
+
+
+button[type="submit"] {
+
+background: #434d96;
+
+color: white;
+
+border: none;
+
+border-radius: 50px;
+
+padding: 15px 40px;
+
+font-size: 1rem;
+
+font-weight: 600;
+
+cursor: pointer;
+
+transition: all 0.3s ease;
+
+}
+
+
+
+button[type="submit"]:hover {
+
+background: #619143;
+
+transform: translateY(-3px);
+
+}
+
+   /* --- TEAM SECTION STYLES (ENHANCED) --- */
+        #team {
+            background-color: #f8f9fb; /* Use the global light background */
+            padding: 80px 5%; 
+        }
+        
+        .team-member {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+        
+        .team-member img {
+            width: 100%; 
+            height: 280px; /* Slightly taller for better focus */
+            object-fit: cover; 
+            object-position: center top; 
+            display: block;
+            border-radius: 12px 12px 0 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover img {
+            transform: scale(1.02); /* Slight zoom on image hover */
+        }
+
+        .team-details {
+            padding: 25px 20px 30px; 
+            flex-grow: 1; /* Ensures equal card height if descriptions vary */
+        }
+
+        .team-member h4 {
+            font-size: 1.7rem;
+            color: #434d96; /* Primary color for name */
+            margin: 0 0 5px; 
+            font-weight: 700;
+        }
+
+        /* ROLE BADGE STYLE - Using primary site colors */
+        .team-member .role { 
+            color: #619143; /* Accent Green text */
+            background-color: #f1f7ef; /* Very light background for contrast */
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-bottom: 18px; 
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            border: 1px solid #61914350; /* Subtle border for definition */
+        }
+
+        .team-member p {
+            color: #555;
+            padding: 0; 
+            margin-top: 0;
+            font-size: 1rem; /* Slightly larger description text */
+        }
+</style>
+</head>
+<body>
+  <header>
+    <!-- Logo link points to default home page hash -->
+    <a href="#home"><img src="/home/kelly/Downloads/image-250x150.jpg" alt="KelTech Solutions Logo" class="logo"></a>
+    <nav>
+      <ul id="main-nav-list">
+        <!-- Links are set to the target hashes -->
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about-section" class="nav-link">About</a></li>
+        <li><a href="#services-section" class="nav-link">Services</a></li>
+        <li><a href="#portfolio-section" class="nav-link">Portfolio</a></li>
+        <li><a href="#contact-section" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+  </header>
+
+  <!-- === PAGE CONTAINERS === -->
+
+  <!-- 1. HOME PAGE -->
+  <div id="home-page" class="page-container active-page">
+      <section class="hero">
+        <div class="hero-context" id="context-banner">
+            <i class="fas fa-map-marker-alt"></i> <span id="location-context">Personalized experience loading...</span>
+        </div>
+        <h1 id="dynamic-headline">Where Technology Meets Creativity</h1>
+        <p id="dynamic-subheading">We merge cutting-edge technology and creativity to craft beautiful, powerful digital solutions that help your business grow in the tech era.</p>
+        <a href="#contact-section">Start Your Project</a>
+      </section>
+
+      <!-- HOME: CORE VALUES SECTION -->
+      <section id="values">
+        <h2>Our Philosophy</h2>
+        <p>At KelTech Solutions, we believe that technology and creativity are powerful forces that, when combined, can transform ideas into impactful digital experiences. We approach every project with innovation, precision and passion.</p>
+        <div class="features-grid">
+          <div class="feature-item">
+            <i class="fas fa-robot"></i>
+            <h3>Innovation</h3>
+            <p>Leveraging cutting-edge tech ideas to deliver next-generation digital solutions.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-users"></i>
+            <h3>Collaboration</h3>
+            <p>We value teamwork and open communication. By working closely with our clients and within our team, we ensure every idea grows into something impactful and successful.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Reliable Systems</h3>
+            <p>Crafting robust, secure and scalable systems you can depend on.</p>
+          </div>
+        </div>
+      </section> 
+      <section id="values-2">
+        <h2>Our Values</h2>
+        <p>At KelTech Solutions, our values are the foundation of everything we do. They guide how we think, create and connect with our clients. This principles shape our culture and define who we are - ateam committed to excellence, innovation and integrity in every project.</p>
+        <div class="features-grid">
+          <div class="feature-item">
+            <i class="fas fa-lightbulb"></i>
+            <h3>Creativity</h3>
+            <p>We use modern technology to enhance creative thinking, designing unique, visually striking and user-focused digital solutions that make our clients stand out.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-chart-line"></i>
+            <h3>Data-Driven Quality</h3>
+            <p>Our team continuously learn and improve, maintaining high standards to deliver reliable, efficient and result-oriented solutions every time.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-handshake"></i>
+            <h3>Personalized Customer Focus</h3>
+            <p>As KelTech Solutions, we take time to better understand client needs, crafting tailored solutions that truly meet their goals and vision.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOME: CTA SECTION -->
+      <section style="background-color: #393f69; color: #fff;">
+        <h2>Ready to transform your business with our professional help?</h2>
+        <p style="color: #fff;">Let's discuss your next project and how KelTech solutions can deliver creative, powerful results.</p>
+        <a href="#contact-section" style="background: #619143; color: #fff; padding: 14px 35px; border-radius: 50px; font-weight: 600; display: inline-block;">Get a Free Consultation</a>
+      </section>
+  </div>
+
+  <!-- 2. ABOUT PAGE -->
+  <div id="about-page" class="page-container">
+      <section class="internal-hero">
+        <h1>Our Mission </h1>
+        <p>To provide high-quality, user-friendly tech-powered digital solutions that merge with our creativity to help businesses achieve meaningful online impact.</p>
+        <h1>Our Vision</h1>
+        <p>To become a leading tech-driven creative company recognized for innovation, excellence, and client satisfaction across Africa and beyond.</p>
+      </section>
+
+      <section id="about-content">
+        <h2>The KelTech Difference</h2>
+        <p>At KelTech Solutions, we stand out through our unique blend of creativity, technology and dedication to excellence. We don’t just design — we craft meaningful digital experiences that align with your vision and deliver real results. With a client-first approach, a passion for innovation and a commitment to quality, we transform ideas into powerful online solutions that make brands shine.</p>
+        <h2>Our Journey</h2>
+        <p>KelTech Solutions began as a dream — a vision by our founder, Kelly Peter, to merge creativity and technology into something meaningful. What started as a solo journey fueled by curiosity and passion for design and development has grown into a dynamic digital solutions brand. From humble beginnings creating small web projects to delivering professional websites, graphics, and digital services, KelTech Solutions was built on dedication, innovation, and a belief that technology can transform ideas into impact.
+Today, we continue that mission — helping businesses and individuals stand out online through creativity, reliability, and a deep understanding of what makes every brand unique. At KelTech Solutions, our story is still being written — one project, one idea, and one success at a time.</p>
+      </section>
+
+      <!-- ABOUT: TEAM SECTION -->
+     <section id="team" style="background-color: #062d68;">
+        <h2>Meet The Team</h2>
+        <p>Our success is built on the expertise and passion of our diverse team of designers, developers, and strategists.</p>
+        <div class="grid">
+          <div class="card team-member">
+            <!-- Placeholder image used for display functionality -->
+            <img src="/home/kelly/Downloads/founder keltech.jpeg" alt="Team Member 1">
+            <!-- New wrapper for consistent padding below image -->
+            <div class="team-details">
+                <h4>Kelly Peter Barua</h4>
+                <!-- Replaced inline style with CSS class 'role' -->
+                <p class="role">Founder Keltech Solutions</p>
+                <p>A passionate web developer and creative designer with a strong belief in the power of technology to inspire change</p>
+            </div>
+          </div>
+          <div class="card team-member">
+            <!-- Placeholder image used for display functionality -->
+            <img src="https://images.pexels.com/photos/3760338/pexels-photo-3760338.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Team Member 2">
+            <!-- New wrapper for consistent padding below image -->
+            <div class="team-details">
+                <h4>Peninah Mwaura</h4>
+                <p class="role">C.E.O</p>
+                <p>Leads the company with vision, creativity and a deep commitment to excellence</p>
+            </div>
+          </div>
+          <div class="card team-member">
+            <!-- Original external image kept -->
+            <img src="https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg" alt="Team Member 3">
+            <!-- New wrapper for consistent padding below image -->
+            <div class="team-details">
+                <h4>Navy Okiru</h4>
+                <p class="role">Lead Designer</p>
+                <p>Passionate designer who combines artistic vision with technical precision to craft designs that are not only visually striking but also functional and user-friendly.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+  </div>
+
+  <!-- 3. SERVICES PAGE (Modified) -->
+  <div id="services-page" class="page-container">
+      <section class="internal-hero">
+        <h1>Comprehensive Tech-Powered Digital Services</h1>
+        <p>From initial concept to high Tech enhanced deployment and beyond, click any service below to learn more and chat with us!</p>
+      </section>
+
+      <section id="services-core">
+        <h2>Our Services (Click to View Details)</h2>
+        <p>Our dedicated services are designed and tailored to provide specialized expertise across all facets of digital transformation. Tap on a card to see how we can help.</p>
+        <div class="grid">
+          <!-- Service Cards now have the 'service-card' class and 'data-service-key' attribute -->
+          <div class="card service-card" data-service-key="web-dev">
+            <i class="fas fa-code"></i>
+            <h3>High Tech Web Development</h3>
+            <p>Building modern, fast and secured websites tailored to your goals.</p>
+          </div>
+          <div class="card service-card" data-service-key="graphic-design">
+            <i class="fas fa-paint-brush"></i>
+            <h3>Quality Graphic Design</h3>
+            <p>Crafting strong brand identities through quality logos and visual storytelling.</p>
+          </div>
+          <div class="card service-card" data-service-key="government-services">
+            <i class="fas fa-briefcase"></i>
+            <h3>Government Online Services</h3>
+            <p>Helping with secure, accurate, and efficient e-government processes.</p>
+          </div>
+          <div class="card service-card" data-service-key="seo-marketing">
+            <i class="fas fa-chart-line"></i>
+            <h3>SEO & Marketing</h3>
+            <p>Enhancing your visibility and engagement with proven strategies.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES: WHY CHOOSE KELTECH SECTION (Reinstated) -->
+      <section id="process" style="background-color: #f0f2f5;">
+        <h2>Why Choose KelTech Solutions?</h2>
+        <p>We combine technical depth with creative flair to ensure every project delivers tangible business value.</p>
+        <div class="features-grid">
+          <div class="feature-item service-detail">
+            <i class="fas fa-rocket"></i>
+            <h3>High Tech Web Development</h3>
+            <p>We build sites that are fast, responsive and optimized for search engines and user experience</p>
+            <ul>
+              <li>Full-Stack Development(React, Node, Python)</li>
+              <li>CMS Integration(WordPress,Custom)</li>
+              <li>E-commerce Solutions</li>
+            </ul>
+          </div>
+          <div class="feature-item service-detail">
+            <i class="fas fa-pencil-ruler"></i>
+            <h3>Quality Branding & Design</h3>
+            <p>Our branding and design services go beyond visuals — we create identities that capture your essence, connect with your audience and leave a lasting impression.</p>
+            <ul>
+              <li>Logo and Identity Kits</li>
+              <li>UI/UX Design for Web and Mobile</li>
+              <li>Marketing Collateral Design</li>
+            </ul>
+          </div>
+          <div class="feature-item service-detail">
+            <i class="fas fa-sitemap"></i>
+            <h3>Digital Strategy & Consulting</h3>
+            <p>Beyond execution, we offer guidance to navigate the digital landscape.</p>
+            <ul>
+              <li>Market Analysis and Positioning</li>
+              <li>Technology Stack Recommendations</li>
+              <li>Ongoing Intelligent Maintenance and Support</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+  </div>
+
+  <!-- 4. PORTFOLIO PAGE -->
+<div id="portfolio-page" class="page-container">
+    <section class="internal-hero">
+      <h1>Our Featured Work</h1>
+      <p>Discover projects where creativity met cutting-edge technology, delivering real results for our clients.</p>
+    </section>
+
+    <section id="portfolio-showcase">
+      <h2>Showcase of Our Excellence</h2>
+      <p>From complex web applications to stunning visual identities, our work spans the full digital spectrum.</p>
+      <div class="grid">
+        <!-- Project 1: Corporate Website -->
+        <div class="card portfolio-card">
+          <img src="https://cdn.pixabay.com/photo/2018/05/08/08/44/artificial-intelligence-3382507_960_720.jpg" alt="Corporate Website" class="portfolio-image">
+          <h3>Corporate Website</h3>
+          <!-- WhatsApp Link -->
+          <a class="whatsapp-btn" 
+             href="https://wa.me/254717339298?text=Hello!%20I'm%20interested%20in%20your%20Corporate%20Website%20project." 
+             target="_blank"
+             aria-label="Discuss Corporate Website on WhatsApp">
+              <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
+          </a>
+        </div>
+        
+        <!-- Project 2: Brand Identity -->
+        <div class="card portfolio-card">
+          <img src="https://cdn.pixabay.com/photo/2020/08/09/14/25/lines-5475657_960_720.jpg" alt="Brand Identity" class="portfolio-image">
+          <h3>Brand Identity</h3>
+          <!-- WhatsApp Link -->
+          <a class="whatsapp-btn" 
+             href="https://wa.me/254717339298?text=Hello!%20I'm%20interested%20in%20your%20Brand%20Identity%20project." 
+             target="_blank"
+             aria-label="Discuss Brand Identity on WhatsApp">
+              <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
+          </a>
+        </div>
+        
+        <!-- Project 3: App UI/UX Design -->
+        <div class="card portfolio-card">
+          <img src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_960_720.jpg" alt="App UI/UX Design" class="portfolio-image">
+          <h3>App UI/UX Design</h3>
+          <!-- WhatsApp Link -->
+          <a class="whatsapp-btn" 
+             href="https://wa.me/254717339298?text=Hello!%20I'm%20interested%20in%20your%20App%20UI/UX%20Design%20project." 
+             target="_blank"
+             aria-label="Discuss App UI/UX Design on WhatsApp">
+              <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
+          </a>
+        </div>
+        
+        <!-- Project 4: E-commerce Platform -->
+        <div class="card portfolio-card">
+          <img src="https://cdn.pixabay.com/photo/2017/08/30/07/56/money-2696228_960_720.jpg" alt="E-commerce Platform" class="portfolio-image">
+          <h3>E-commerce Platform</h3>
+          <!-- WhatsApp Link -->
+          <a class="whatsapp-btn" 
+             href="https://wa.me/254717339298?text=Hello!%20I'm%20interested%20in%20your%20E-commerce%20Platform%20project." 
+             target="_blank"
+             aria-label="Discuss E-commerce Platform on WhatsApp">
+              <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
+          </a>
+        </div>
+        
+        <!-- Project 5: Secure Government Portal -->
+        <div class="card portfolio-card">
+          <img src="https://mukuyu.wordpress.com/wp-content/uploads/2025/02/stemma-del-kenya1051823999798234531.jpg?w=1024" alt="Online Government Services" class="portfolio-image">
+          <h3>Government services</h3>
+          <!-- WhatsApp Link -->
+          <a class="whatsapp-btn" 
+             href="https://wa.me/254717339298?text=Hello!%20I'm%20interested%20in%20your%20Secure%20Government%20Portal%20project." 
+             target="_blank"
+             aria-label="Discuss Secure Government Portal on WhatsApp">
+              <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
+          </a>
+        </div>
+        
+        <!-- Project 6: Dashboard Redesign -->
+        <div class="card portfolio-card">
+          <img src="https://cdn.pixabay.com/photo/2016/11/27/21/42/stock-1863880_960_720.jpg" alt="Dashboard Redesign" class="portfolio-image">
+          <h3>Dashboard Redesign</h3>
+          <!-- WhatsApp Link -->
+          <a class="whatsapp-btn" 
+             href="https://wa.me/254717339298?text=Hello!%20I'm%20interested%20in%20your%20Dashboard%20Redesign%20project." 
+             target="_blank"
+             aria-label="Discuss Dashboard Redesign on WhatsApp">
+              <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO: CASE STUDIES SECTION -->
+    <section id="process-section" style="background-color: #f0f2f5;">
+      <h2>Our Transparent Development Process</h2>
+      <p>See the simple steps we take to turn your idea into a measurable, successful digital solution.</p>
+      <div class="grid">
+          
+          <div class="card process-card">
+              <h4>1. Discovery & Strategy</h4>
+              <p>We start with deep-dive sessions to understand your business goals, target audience, and technical requirements. This phase includes wireframing and creating a robust project plan.</p>
+              <!-- WhatsApp Link for Process -->
+              <a class="whatsapp-btn" 
+                 href="https://wa.me/254717339298?text=Hello!%20I'm%20ready%20for%20a%20Discovery%20and%20Strategy%20session%20for%20my%20new%20project." 
+                 target="_blank"
+                 aria-label="Discuss Project Strategy on WhatsApp">
+                  <i class="fab fa-whatsapp"></i> Start Your Project
+              </a>
+          </div>
+          
+          <div class="card process-card">
+              <h4>2. Design & Development</h4>
+              <p>Using agile methodology, we move into UI/UX design and iterative coding sprints. We provide frequent prototypes and value your feedback to ensure we're building exactly what you need.</p>
+              <!-- WhatsApp Link for Process -->
+              <a class="whatsapp-btn" 
+                 href="https://wa.me/254717339298?text=Hello!%20I'm%20ready%20for%20a%20Discovery%20and%20Strategy%20session%20for%20my%20new%20project." 
+                 target="_blank"
+                 aria-label="Discuss Project Strategy on WhatsApp">
+                  <i class="fab fa-whatsapp"></i> Start Your Project
+              </a>
+          </div>
+          
+          <div class="card process-card">
+              <h4>3. Launch & Optimization</h4>
+              <p>After rigorous testing, we deploy the final product. We then focus on post-launch monitoring, performance optimization, and provide documentation and training for your team.</p>
+              <!-- WhatsApp Link for Process -->
+              <a class="whatsapp-btn" 
+                 href="https://wa.me/254717339298?text=Hello!%20I'm%20ready%20for%20a%20Discovery%20and%20Strategy%20session%20for%20my%20new%20project." 
+                 target="_blank"
+                 aria-label="Discuss Project Strategy on WhatsApp">
+                  <i class="fab fa-whatsapp"></i> Start Your Project
+              </a>
+          </div>
+      </div>
+    </section>
+</div>
+
+  <!-- 5. CONTACT PAGE -->
+  <div id="contact-page" class="page-container">
+      <section class="internal-hero">
+        <h1>Let's Start Conversation</h1>
+        <p>We're ready to hear about your project and explore how our expertise can drive your success.</p>
+      </section>
+
+      <!-- CONTACT: INFO SECTION -->
+      <section id="info">
+        <h2>Quick Contact Information</h2>
+        <p>Reach out to us directly via phone, email, or visit our office during business hours.</p>
+        <div class="features-grid">
+          <div class="feature-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Office Location</h3>
+            <p style="margin: 0;">Vikam B center Kasarani</p>
+            <p style="margin: 0;">Tech City</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-envelope"></i>
+            <h3>Email Us</h3>
+            <p style="margin: 0;"><a href="mailto:kellypeterbarua@gmail.com" style="color: #619143; font-weight: 500;">kellypeterbarua@gmail.com</a></p>
+            <p style="margin: 0;">24/7 Response Time</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-phone"></i>
+            <h3>Call Us</h3>
+            <p style="margin: 0;"><a href="tel:+254 717 339 298" style="color: #619143; font-weight: 500;">(+254) 717 339 298</a></p>
+            <p style="margin: 0;">Mon - Fri, 8:00 AM - 5:00 PM EST</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT: FORM SECTION -->
+      <section id="contact-form" style="background-color: #f0f2f5;">
+        <h2>Send Us a Message</h2>
+        <p>Fill out the form below, and an specialist will get back to you within one business day.</p>
+        <form id="contact-us-form">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="subject" placeholder="Project Subject / Inquiry" required>
+          <textarea name="message" rows="5" placeholder="Tell us about your project or idea..." required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+  </div>
+
+  <!-- CHAT WIDGET -->
+  <div class="chat-widget">
+    <div class="chat-bubble" id="chat-toggle">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+    <div class="chat-window" id="chat-window">
+        <div class="chat-header">
+            <span>KelTech Assistant</span>
+            <span class="close-chat" id="close-chat">&times;</span>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                <p>Hello! I'm KelTech's assistant. How can I help you with your digital project today?</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chat-input-field" placeholder="Type your message...">
+            <button id="send-message"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+  </div>
+
+  <!-- HIDDEN ADMIN PANEL TRIGGER AND PANEL -->
+  <div class="admin-panel-toggle" id="admin-panel-toggle"></div>
+  <div class="admin-panel" id="admin-panel">
+    <h4>Admin Panel: Content Management</h4>
+    <div class="upload-area" id="upload-design-brief">
+        <i class="fas fa-file-upload"></i>
+        <p>Upload Design Brief </p>
+    </div>
+    <div class="upload-area" id="upload-logo">
+        <i class="fas fa-image"></i>
+        <p>Upload Logo </p>
+    </div>
+    <button id="admin-save">Save Configuration</button>
+  </div>
+
+  <!-- SERVICE DETAIL MODAL OVERLAY -->
+  <div id="service-detail-modal" class="modal-overlay">
+      <div class="modal-content">
+          <span class="modal-close" id="close-modal">&times;</span>
+          <div class="service-detail-modal">
+              <img id="modal-image" src="" alt="Service Image">
+              <h2 id="modal-title">Service Title</h2>
+              <p id="modal-description">Detailed description will go here.</p>
+              <h3>Key Focus Areas</h3>
+              <ul id="modal-subservices">
+                  <!-- Sub-services list will be dynamically populated -->
+              </ul>
+              <!-- WhatsApp Button -->
+              <a href="#" id="whatsapp-link" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-whatsapp"></i> Chat on WhatsApp Now
+              </a>
+          </div>
+      </div>
+  </div>
+
+  <!-- FOOTER -->
+ <footer>
+    <div class="footer-left">
+      <h3>KelTech Solutions</h3>
+      <p>Where Technology Meets Creativity. We deliver powered web, graphics, and digital government services with innovation and reliability.</p>
+      <p>Follow us on social media: <strong>@KelTech4</strong></p>
+    </div>
+    <div class="social-icons">
+      <a href="javascript:void(0)"><i class="fab fa-facebook"></i></a>
+      <a href="javascript:void(0)"><i class="fab fa-instagram"></i></a>
+      <a href="javascript:void(0)"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p>© 2025 KelTech Solutions. All Rights Reserved.</p>
+  </footer>
+
+  <script id="app-script">
+    // --- ROUTER & GENERAL JS ---
+
+    // Mapping URL hash to the corresponding page container ID
+    const routeMap = {
+        '#home': 'home-page',
+        '#about-section': 'about-page',
+        '#services-section': 'services-page',
+        '#portfolio-section': 'portfolio-page',
+        '#contact-section': 'contact-page',
+        '': 'home-page' // Default case if no hash is present
+    };
+
+    /**
+     * The routing function handles showing the correct page content
+     * based on the URL hash.
+     */
+    function router() {
+        // 1. Determine the target page ID from the URL hash
+        const hash = window.location.hash || '#home';
+        const targetPageId = routeMap[hash];
+
+        // 2. Get all page containers and navigation links
+        const pageContainers = document.querySelectorAll('.page-container');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // 3. Hide all pages and remove active class from links
+        pageContainers.forEach(container => {
+            container.classList.remove('active-page');
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            // Close mobile menu when routing
+            document.querySelector('nav ul').classList.remove('active');
+        });
+
+        // 4. Show the target page
+        const activePage = document.getElementById(targetPageId);
+        if (activePage) {
+            activePage.classList.add('active-page');
+            window.scrollTo(0, 0); // Scroll to the top of the new page
+        } else {
+            // Fallback to home if an invalid hash is provided
+            document.getElementById('home-page').classList.add('active-page');
+        }
+
+        // 5. Set active class on the corresponding navigation link
+        const activeLink = document.querySelector(`a[href="${hash}"]`);
+        if (activeLink) {
+            activeLink.classList.add('active');
+        } else {
+            // Ensure 'Home' is active if on the root path
+            document.querySelector('a[href="#home"]').classList.add('active');
+        }
+    }
+
+    // --- SERVICE DETAIL DATA ---
+    const serviceDetails = {
+        'web-dev': {
+            title: 'Enhanced Web Development',
+            image: 'https://cdn.pixabay.com/photo/2018/05/08/08/44/artificial-intelligence-3382507_960_720.jpg',
+            description: 'We build modern, fast, and intelligent websites and web applications tailored to your specific goals. Our expertise covers everything from powerful back-end infrastructure to engaging, responsive front-end user experiences. We ensure your digital platform is reliable, fast and ready for growth.',
+            subServices: ['Enhanced Full-Stack Development', 'Intelligent CMS Integration', 'Powered E-commerce Solutions', 'Cognitive API Development and Integration']
+        },
+        'graphic-design': {
+            title: 'Graphic Design',
+            image: 'https://cdn.pixabay.com/photo/2020/08/09/14/25/lines-5475657_960_720.jpg',
+            description: 'Our design work focuses on data-driven communication and lasting impact. We craft strong brand identities through professional logos, visual storytelling and comprehensive style guides, ensuring your brand is instantly recognizable and resonant with your target audience.',
+            subServices: [' Logo and Identity Kits', 'Enhanced UI/UX Design', 'Marketing Collateral Design', 'Visual Content Creation']
+        },
+        'government-services': {
+            title: 'Government & E-Platform Solutions',
+            image: 'https://mukuyu.wordpress.com/wp-content/uploads/2025/02/stemma-del-kenya1051823999798234531.jpg?w=1024',
+            description: 'KelTech assists you get through with government services, focusing on secure, accurate and efficient e-government processes. We help ensure compliance and help you engage with government systems.',
+            subServices: ['eCitizen', 'eBusiness', 'NTSA Driving licence ', 'KRA, Passport Application & HELB']
+        },
+        'seo-marketing': {
+            title: 'SEO and Digital Marketing',
+            image: 'https://cdn.pixabay.com/photo/2017/07/03/20/17/colorful-2468874_960_720.jpg',
+            description: 'We enhance your visibility and engagement with proven  digital marketing strategies. Our approach combines  technical SEO optimization with machine learning content creation and intelligent social media outreach to drive targeted traffic and convert visitors into loyal customers.',
+            subServices: ['SEO Audits and Optimization', 'Machine Learning Content Strategy', 'Intelligent PPC Campaign Management', 'Social Media Management']
+        }
+    };
+
+    // --- Context and Personalization ---
+    function updateContextBanner() {
+        // In a real app, this would use geolocation API or IP-based location services
+        // For the prototype, we'll use a simple time-based greeting
+        const hour = new Date().getHours();
+        let greeting;
+        
+        if (hour < 12) {
+            greeting = "Good morning! Perfect time for digital innovation.";
+        } else if (hour < 18) {
+            greeting = "Good afternoon! Ready to boost your digital presence?";
+        } else {
+            greeting = "Good evening! Planning tomorrow's digital success?";
+        }
+        
+        document.getElementById('location-context').textContent = greeting;
+        
+        // Update personalized headline based on stored preferences or time
+        // In a real app, this would use data from previous visits or user preferences
+        const headlines = [
+            "Where Technology Meets Creativity",
+            "Transform Your Business with Intelligent Design",
+            "Powered Solutions for Digital Success",
+            "We Build Brands That Speak and Designs That Inspire"
+        ];
+        
+        const subheadings = [
+            "We merge cutting-edge technology and creativity to craft beautiful, powerful digital solutions that help your business grow in the Tech era.",
+            "Our powered team creates intelligent, data-driven digital experiences that connect with your audience and drive measurable results.",
+            "From concept to deployment, our solutions transform complex challenges into streamlined, elegant digital experiences.",
+            "Stay ahead of the curve with our forward-thinking approach to web development, design, and digital marketing."
+        ];
+        
+        // Get index from localStorage or generate random one
+        let personalizedIndex = localStorage.getItem('keltech_personalized_index');
+        if (!personalizedIndex) {
+            personalizedIndex = Math.floor(Math.random() * headlines.length);
+            localStorage.setItem('keltech_personalized_index', personalizedIndex);
+        }
+        
+        document.getElementById('dynamic-headline').textContent = headlines[personalizedIndex];
+        document.getElementById('dynamic-subheading').textContent = subheadings[personalizedIndex];
+    }
+
+    // --- SERVICE MODAL LOGIC ---
+    const modalOverlay = document.getElementById('service-detail-modal');
+    const closeModalBtn = document.getElementById('close-modal');
+    const whatsappLink = document.getElementById('whatsapp-link');
+    const whatsappNumber = "254717339298"; // No spaces or symbols
+
+    /**
+     * Loads the content into the modal and displays it.
+     * @param {string} serviceKey - The key corresponding to the service in serviceDetails.
+     */
+    function showServiceModal(serviceKey) {
+        const detail = serviceDetails[serviceKey];
+        if (!detail) return;
+
+        // Populate Modal Content
+        document.getElementById('modal-title').textContent = detail.title;
+        document.getElementById('modal-description').textContent = detail.description;
+        document.getElementById('modal-image').src = detail.image;
+
+        // Populate Sub-Services List
+        const ul = document.getElementById('modal-subservices');
+        ul.innerHTML = ''; // Clear previous content
+        detail.subServices.forEach(subService => {
+            const li = document.createElement('li');
+            li.textContent = subService;
+            ul.appendChild(li);
+        });
+
+        // Set WhatsApp Link
+        const encodedTitle = encodeURIComponent(detail.title);
+        const whatsappMessage = `Hello KelTech Solutions I am interested in your ${encodedTitle} service. Can you provide more details?`;
+        whatsappLink.href = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+        
+        // Show Modal
+        modalOverlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling the body underneath
+    }
+
+    /**
+     * Hides the modal.
+     */
+    function hideServiceModal() {
+        modalOverlay.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore body scrolling
+    }
+    
+    // --- AI IMAGE GENERATION FUNCTIONS ---
+    function handleImageGeneration(projectType) {
+        const buttons = document.querySelectorAll(`.generate-image-btn[data-project="${projectType}"]`);
+        
+        if (!buttons.length) return;
+        
+        const button = buttons[0];
+        const card = button.closest('.portfolio-card');
+        const progressBar = card.querySelector('.image-generation-state');
+        const loadingIndicator = card.querySelector('.loading-indicator');
+        const image = card.querySelector('.portfolio-image');
+        
+        // Show loading state
+        button.disabled = true;
+        loadingIndicator.style.display = 'block';
+        
+        // Simulate progress
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += 5;
+            progressBar.style.width = `${progress}%`;
+            
+            if (progress >= 100) {
+                clearInterval(interval);
+                
+                // In a real app, this would call the Magic Loops API and replace with the returned image
+                setTimeout(() => {
+                    loadingIndicator.style.display = 'none';
+                    
+                    // For the prototype, we'll just swap to a different stock image
+                    const alternativeImages = {
+                        'corporate-website': 'https://cdn.pixabay.com/photo/2016/11/19/14/16/man-1839500_960_720.jpg',
+                        'brand-identity': 'https://cdn.pixabay.com/photo/2017/12/12/12/44/bitcoin-3014614_960_720.jpg',
+                        'app-design': 'https://cdn.pixabay.com/photo/2017/01/29/13/21/mobile-devices-2017978_960_720.jpg',
+                        'ecommerce': 'https://cdn.pixabay.com/photo/2018/01/28/10/59/internet-3113279_960_720.jpg',
+                        'government services': 'https://mukuyu.wordpress.com/wp-content/uploads/2025/02/stemma-del-kenya1051823999798234531.jpg?w=1024',
+                        'dashboard': 'https://cdn.pixabay.com/photo/2020/01/26/20/14/computer-4795762_960_720.jpg'
+                    };
+                    
+                    image.src = alternativeImages[projectType];
+                    button.textContent = 'Visual Generated!';
+                    button.innerHTML = '<i class="fas fa-check"></i> Visual Generated!';
+                    button.style.background = '#619143';
+                    
+                    // Reset after a few seconds
+                    setTimeout(() => {
+                        button.disabled = false;
+                        button.innerHTML = '<i class="fas fa-magic"></i> Generate New Visual';
+                        button.style.background = '#434d96';
+                        progressBar.style.width = '0%';
+                    }, 3000);
+                }, 1000);
+            }
+        }, 100);
+    }
+    
+    // --- CASE STUDY SUMMARY GENERATION ---
+    function handleSummaryGeneration(caseType) {
+        const button = document.querySelector(`.generate-summary-btn[data-case="${caseType}"]`);
+        if (!button) return;
+        
+        const card = button.closest('.case-study');
+        const loadingIndicator = card.querySelector('.loading-indicator');
+        const summary = document.getElementById(`${caseType}-summary`);
+        
+        // Show loading state
+        button.disabled = true;
+        loadingIndicator.style.display = 'block';
+        
+        // Simulate API call to Magic Loops
+        setTimeout(() => {
+            loadingIndicator.style.display = 'none';
+            summary.style.display = 'block';
+            button.innerHTML = '<i class="fas fa-check"></i> Summary Generated';
+            button.style.background = '#619143';
+            
+            // Reset after a while
+            setTimeout(() => {
+                button.disabled = false;
+                button.innerHTML = '<i class="fas fa-file-alt"></i> Update Summary';
+                button.style.background = '#434d96';
+            }, 3000);
+        }, 2000);
+    }
+    
+    // --- CHAT FUNCTIONALITY ---
+    function toggleChatWindow() {
+        const chatWindow = document.getElementById('chat-window');
+        chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+    }
+    
+    function closeChatWindow() {
+        document.getElementById('chat-window').style.display = 'none';
+    }
+    
+    function handleChatMessage() {
+        const inputField = document.getElementById('chat-input-field');
+        const message = inputField.value.trim();
+        
+        if (!message) return;
+        
+        // Clear input field
+        inputField.value = '';
+        
+        // Add user message to chat
+        const chatMessages = document.getElementById('chat-messages');
+        const userMessageDiv = document.createElement('div');
+        userMessageDiv.className = 'message user-message';
+        userMessageDiv.innerHTML = `<p>${message}</p>`;
+        chatMessages.appendChild(userMessageDiv);
+        
+        // Scroll to bottom of chat
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        
+        // In a real app, this would call the Magic Loops API
+        // For the prototype, simulate a response after a short delay
+        setTimeout(() => {
+            const botMessageDiv = document.createElement('div');
+            botMessageDiv.className = 'message bot-message';
+            botMessageDiv.innerHTML = `<p>Thank you for your message! This is a prototype, but in the full version, our team will helpfully response about KelTech's services. How else can I assist you today?</p>`;
+            chatMessages.appendChild(botMessageDiv);
+            
+            // Scroll to bottom again after response
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 1000);
+    }
+    
+    // --- ADMIN PANEL FUNCTIONALITY ---
+    function toggleAdminPanel() {
+        const adminPanel = document.getElementById('admin-panel');
+        adminPanel.style.display = adminPanel.style.display === 'block' ? 'none' : 'block';
+    }
+    
+    // --- FORM SUBMISSION ---
+    function handleFormSubmission(event) {
+        event.preventDefault();
+        
+        const form = event.target;
+        const name = form.elements.name.value;
+        const email = form.elements.email.value;
+        const subject = form.elements.subject.value;
+        const message = form.elements.message.value;
+        
+        // In a real app, this would send the data to the Magic Loops API
+        // For the prototype, just show an alert
+        alert(`Thank you, ${name}! Your message has been received. We'll contact you at ${email} shortly.`);
+        
+        // Reset the form
+        form.reset();
+    }
+    
+    // --- EVENT LISTENERS ---
+    document.addEventListener('DOMContentLoaded', function() {
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navUl = document.querySelector("nav ul");
+        menuToggle.addEventListener("click", () => {
+            navUl.classList.toggle("active");
+        });
+
+        // URL hash change router
+        window.addEventListener('hashchange', router);
+        
+        // Run router on initial load
+        router();
+        
+        // Update context banner on load
+        updateContextBanner();
+
+        // Service Card Click Listeners
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                const serviceKey = e.currentTarget.getAttribute('data-service-key');
+                if (serviceKey) {
+                    showServiceModal(serviceKey);
+                }
+            });
+        });
+
+        // Modal Close Button
+        document.getElementById('close-modal').addEventListener('click', hideServiceModal);
+        
+        // Close modal if clicked outside content area
+        document.getElementById('service-detail-modal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('service-detail-modal')) {
+                hideServiceModal();
+            }
+        });
+        
+        // AI Image Generation Buttons
+        document.querySelectorAll('.generate-image-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const projectType = e.currentTarget.getAttribute('data-project');
+                handleImageGeneration(projectType);
+            });
+        });
+        
+        // Case Study Summary Buttons
+        document.querySelectorAll('.generate-summary-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const caseType = e.currentTarget.getAttribute('data-case');
+                handleSummaryGeneration(caseType);
+            });
+        });
+        
+        // Chat Widget
+        document.getElementById('chat-toggle').addEventListener('click', toggleChatWindow);
+        document.getElementById('close-chat').addEventListener('click', closeChatWindow);
+        document.getElementById('send-message').addEventListener('click', handleChatMessage);
+        document.getElementById('chat-input-field').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleChatMessage();
+            }
+        });
+        
+        // Admin Panel Toggle (hidden corner click)
+        document.getElementById('admin-panel-toggle').addEventListener('click', toggleAdminPanel);
+        
+        // Contact Form Submission
+        document.getElementById('contact-us-form').addEventListener('submit', handleFormSubmission);
+    });
+  </script>
+</body>
+</html>

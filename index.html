@@ -769,103 +769,6 @@ top: 2px;
 
 
 
-/* AI Image Generation Button */
-
-.generate-image-btn, .generate-summary-btn {
-
-background: #434d96;
-
-color: #fff;
-
-border: none;
-
-border-radius: 50px;
-
-padding: 8px 15px;
-
-font-size: 0.9rem;
-
-cursor: pointer;
-
-display: flex;
-
-align-items: center;
-
-margin: 10px auto;
-
-transition: all 0.3s ease;
-
-}
-
-
-
-.generate-image-btn:hover, .generate-summary-btn:hover {
-
-background: #619143;
-
-transform: translateY(-2px);
-
-}
-
-
-
-.generate-image-btn i, .generate-summary-btn i {
-
-font-size: 1rem;
-
-margin-right: 5px;
-
-color: #fff;
-
-}
-
-
-
-.image-generation-state, .summary-generation-state {
-
-height: 3px;
-
-width: 0%;
-
-background: #619143;
-
-transition: width 0.3s ease;
-
-margin-top: 5px;
-
-}
-
-
-
-.loading-indicator {
-
-display: none;
-
-margin: 10px auto;
-
-}
-
-
-
-.loading-indicator .spinner {
-
-border: 3px solid rgba(97, 145, 67, 0.3);
-
-border-radius: 50%;
-
-border-top: 3px solid #619143;
-
-width: 20px;
-
-height: 20px;
-
-animation: spin 1s linear infinite;
-
-display: inline-block;
-
-margin-right: 10px;
-
-}
 
 
 
@@ -879,286 +782,41 @@ margin-right: 10px;
 
 
 
-.case-study-summary {
-
-background: #f8f9fb;
-
-border-left: 3px solid #434d96;
-
-padding: 15px;
-
-margin-top: 15px;
-
-border-radius: 0 10px 10px 0;
-
-display: none;
-
+/* --- WHATSAPP FLOATING BUBBLE STYLES --- */
+.whatsapp-float-bubble {
+    width: 60px;
+    height: 60px;
+    background: #25d366; /* WhatsApp Green */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition-speed) ease;
+    
+    /* Inherits floating position from .chat-widget */
 }
 
-
-
-.case-study-summary ul {
-
-text-align: left;
-
-margin-left: 20px;
-
+/* Captivating Floating Bubble Hover/Click Effect */
+.whatsapp-float-bubble:hover {
+    background: #128c7e;
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
 }
 
+.whatsapp-float-bubble i {
+    font-size: 1.8rem;
+    color: white;
+    margin: 0; /* Remove default margin from i inside button */
+}
 
-
-/* Chat Widget Styles */
-
+/* Ensure the main .chat-widget container maintains the fixed position */
 .chat-widget {
-
-position: fixed;
-
-bottom: 20px;
-
-right: 20px;
-
-z-index: 1500;
-
+    position: fixed;
+    bottom: 30px; 
+    right: 30px; 
+    z-index: 1500;
 }
-
-
-
-.chat-bubble {
-
-width: 60px;
-
-height: 60px;
-
-background: #434d96;
-
-border-radius: 50%;
-
-display: flex;
-
-align-items: center;
-
-justify-content: center;
-
-cursor: pointer;
-
-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-
-transition: all 0.3s ease;
-
-}
-
-
-
-.chat-bubble:hover {
-
-background: #619143;
-
-transform: scale(1.1);
-
-}
-
-
-
-.chat-bubble i {
-
-font-size: 1.8rem;
-
-color: white;
-
-}
-
-
-
-.chat-window {
-
-position: fixed;
-
-bottom: 90px;
-
-right: 20px;
-
-width: 350px;
-
-height: 450px;
-
-background: white;
-
-border-radius: 15px;
-
-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-
-display: none;
-
-flex-direction: column;
-
-overflow: hidden;
-
-z-index: 1600;
-
-}
-
-
-
-.chat-header {
-
-background: #434d96;
-
-color: white;
-
-padding: 15px 20px;
-
-font-weight: 600;
-
-display: flex;
-
-justify-content: space-between;
-
-align-items: center;
-
-}
-
-
-
-.chat-header .close-chat {
-
-cursor: pointer;
-
-font-size: 1.2rem;
-
-}
-
-
-
-.chat-messages {
-
-padding: 20px;
-
-flex-grow: 1;
-
-overflow-y: auto;
-
-}
-
-
-
-.message {
-
-margin-bottom: 15px;
-
-max-width: 80%;
-
-}
-
-
-
-.message p {
-
-padding: 10px 15px;
-
-border-radius: 18px;
-
-display: inline-block;
-
-margin: 0;
-
-}
-
-
-
-.user-message {
-
-text-align: right;
-
-margin-left: auto;
-
-}
-
-
-
-.user-message p {
-
-background: #434d96;
-
-color: white;
-
-border-radius: 18px 18px 0 18px;
-
-}
-
-
-
-.bot-message p {
-
-background: #f0f2f5;
-
-color: #333;
-
-border-radius: 18px 18px 18px 0;
-
-}
-
-
-
-.chat-input {
-
-padding: 15px;
-
-border-top: 1px solid #eee;
-
-display: flex;
-
-align-items: center;
-
-}
-
-
-
-.chat-input input {
-
-flex-grow: 1;
-
-padding: 10px 15px;
-
-border: 1px solid #ddd;
-
-border-radius: 30px;
-
-outline: none;
-
-}
-
-
-
-.chat-input button {
-
-background: #619143;
-
-color: white;
-
-border: none;
-
-width: 40px;
-
-height: 40px;
-
-border-radius: 50%;
-
-margin-left: 10px;
-
-cursor: pointer;
-
-transition: all 0.3s ease;
-
-}
-
-
-
-.chat-input button:hover {
-
-background: #434d96;
-
-}
-
 
 
 
@@ -1926,27 +1584,14 @@ Today, we continue that mission — helping businesses and individuals stand out
       </section>
   </div>
 
-  <!-- CHAT WIDGET -->
-  <div class="chat-widget">
-    <div class="chat-bubble" id="chat-toggle">
-        <i class="fas fa-comment-dots"></i>
-    </div>
-    <div class="chat-window" id="chat-window">
-        <div class="chat-header">
-            <span>KelTech Assistant</span>
-            <span class="close-chat" id="close-chat">&times;</span>
-        </div>
-        <div class="chat-messages" id="chat-messages">
-            <div class="message bot-message">
-                <p>Hello! I'm KelTech's assistant. How can I help you with your digital project today?</p>
-            </div>
-        </div>
-        <div class="chat-input">
-            <input type="text" id="chat-input-field" placeholder="Type your message...">
-            <button id="send-message"><i class="fas fa-paper-plane"></i></button>
-        </div>
-    </div>
-  </div>
+ <div class="chat-widget">
+    <a href="https://wa.me/254717339298?text=Hello%20KelTech%20Solutions,%20I%20am%20interested%20in%20your%20digital%20services%20and%20would%20like%20to%20chat!"
+       target="_blank"
+       aria-label="Chat with KelTech Solutions on WhatsApp"
+       class="whatsapp-float-bubble">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
 
   <!-- HIDDEN ADMIN PANEL TRIGGER AND PANEL -->
   <div class="admin-panel-toggle" id="admin-panel-toggle"></div>
